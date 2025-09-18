@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Crea Torneo</title></head>
+<body>
+  <h1>Crea Torneo</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul style="color: red;">
+      {% for m in messages %}
+        <li>{{ m }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  <form method="post" action="{{ url_for('create') }}">
+    <label>Inserisci i nomi dei giocatori (uno per riga o separati da virgola):</label><br>
+    <textarea name="players" rows="8" cols="40" placeholder="Mario\nLuca\nAnna"></textarea><br>
+    <button type="submit">Crea calendario</button>
+  </form>
+</body>
+</html>

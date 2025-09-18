@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Classifica</title></head>
+<body>
+  <h1>Classifica</h1>
+
+  <table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+      <th>Giocatore</th>
+      <th>Vittorie</th>
+      <th>Pareggi</th>
+      <th>Sconfitte</th>
+      <th>Differenza Reti</th>
+      <th>Punti</th>
+    </tr>
+
+    {% for player, s in stats.items() %}
+      <tr>
+        <td>{{ player }}</td>
+        <td>{{ s.V }}</td>
+        <td>{{ s.P }}</td>
+        <td>{{ s.S }}</td>
+        <td>{{ s.DR }}</td>
+        <td>{{ s.Pts }}</td>
+      </tr>
+    {% endfor %}
+
+  </table>
+
+  <p><a href="{{ url_for('tournament') }}">Torna al torneo</a></p>
+
+</body>
+</html>
